@@ -9,17 +9,14 @@ import { useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
 import {
   FaGlobe,
-  FaEnvelope,
-  FaYoutube,
-  FaSteam,
   FaInstagram,
   FaGithub,
-  FaDiscord,
-  FaTwitter,
-  FaSquareStack,
   FaSun,
   FaMoon,
+  FaSnapchatGhost,
 } from 'react-icons/fa';
+import { FaXTwitter, FaLinkedin } from 'react-icons/fa6';
+import { SiGmail } from 'react-icons/si';
 
 function Background() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -68,14 +65,13 @@ export function VisibleLinkTree() {
   };
 
   const links = [
-    { icon: FaGlobe, label: 'Website', href: '#', color: '#3b82f6' },
-    { icon: FaEnvelope, label: 'Email', href: 'mailto:example@example.com', color: '#ef4444' },
-    { icon: FaYoutube, label: 'YouTube', href: '#', color: '#ef4444' },
-    { icon: FaSteam, label: 'Steam', href: '#', color: '#6366f1' },
-    { icon: FaInstagram, label: 'Instagram', href: '#', color: '#ec4899' },
-    { icon: FaGithub, label: 'GitHub', href: '#', color: '#6b7280' },
-    { icon: FaDiscord, label: 'Discord', href: '#', color: '#7c3aed' },
-    { icon: FaTwitter, label: 'X', href: '#', color: '#1DA1F2' },
+    { icon: FaGlobe, label: 'Website', href: 'https://yashsarnaik.vercel.app/', color: '#3b82f6' },
+    { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/yashsarnaik23/', color: '#0077B5' },
+    { icon: SiGmail, label: 'Gmail', href: 'mailto:yashsarnaik2303@gmail.com', color: '#ef4444' },
+    { icon: FaSnapchatGhost, label: 'Snapchat', href: 'https://www.snapchat.com/add/sarnaik1023?share_id=7KuIaoFjEgs&locale=en-GB', color: '#FFFF00' },
+    { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/yashsarnaik23/', color: '#ec4899' },
+    { icon: FaGithub, label: 'GitHub', href: 'https://github.com/yashsarnaik', color: '#6b7280' },
+    { icon: FaXTwitter, label: 'Twitter', href: 'https://x.com/Yash_Sarnaik23', color: '#1DA1F2' },
   ];
 
   return (
@@ -96,7 +92,7 @@ export function VisibleLinkTree() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My Links
+
         </motion.h1>
 
         <Card className="w-full max-w-md bg-white/20 backdrop-blur-xl border-white/30 p-6 md:p-8 rounded-xl shadow-2xl relative">
@@ -147,7 +143,7 @@ export function VisibleLinkTree() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <link.icon className="w-8 md:w-10 h-8 md:h-10 group-hover:scale-110 transition-transform duration-300" style={{ color: link.color }} />
+                    <link.icon className="w-10 md:w-12 h-10 md:h-12 group-hover:scale-110 transition-transform duration-300" style={{ color: link.color }} />
                     <span className="font-semibold text-lg md:text-xl">{link.label}</span>
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
