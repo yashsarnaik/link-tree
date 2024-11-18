@@ -1,23 +1,35 @@
-'use client'
+'use client';
 
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Environment } from '@react-three/drei'
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { motion } from 'framer-motion'
-import { Youtube, Facebook, GamepadIcon, Instagram, Github, DiscIcon as Discord, Twitter, SquareStackIcon, Globe, Mail, Newspaper, Sun, Moon } from 'lucide-react'
-import { useRef, useState, useEffect } from 'react'
-import * as THREE from 'three'
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Environment } from '@react-three/drei';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import * as THREE from 'three';
+import {
+  FaGlobe,
+  FaEnvelope,
+  FaYoutube,
+  FaSteam,
+  FaInstagram,
+  FaGithub,
+  FaDiscord,
+  FaTwitter,
+  FaSquareStack,
+  FaSun,
+  FaMoon,
+} from 'react-icons/fa';
 
 function Background() {
-  const meshRef = useRef<THREE.Mesh>(null)
-  
+  const meshRef = useRef<THREE.Mesh>(null);
+
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.1
-      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.15
+      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.1;
+      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.15;
     }
-  })
+  });
 
   return (
     <mesh ref={meshRef} scale={[30, 30, 30]} position={[0, 0, -5]}>
@@ -30,42 +42,41 @@ function Background() {
         emissiveIntensity={0.5}
       />
     </mesh>
-  )
+  );
 }
 
 export function VisibleLinkTree() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
+    const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-      setTheme(savedTheme)
+      setTheme(savedTheme);
     } else {
-      localStorage.setItem('theme', 'dark')
+      localStorage.setItem('theme', 'dark');
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-  }
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
 
   const links = [
-    { icon: Globe, label: 'Website', href: '#', color: '#3b82f6' },
-    { icon: Mail, label: 'Email', href: 'mailto:example@example.com', color: '#ef4444' },
-    { icon: Youtube, label: 'YouTube', href: '#', color: '#ef4444' },
-
-    { icon: GamepadIcon, label: 'Steam', href: '#', color: '#6366f1' },
-    { icon: Instagram, label: 'Instagram', href: '#', color: '#ec4899' },
-    { icon: Github, label: 'GitHub', href: '#', color: '#6b7280' },
-    { icon: Discord, label: 'Discord', href: '#', color: '#7c3aed' },
-    { icon: Twitter, label: 'X', href: '#', color: '#1DA1F2' },
-  ]
+    { icon: FaGlobe, label: 'Website', href: '#', color: '#3b82f6' },
+    { icon: FaEnvelope, label: 'Email', href: 'mailto:example@example.com', color: '#ef4444' },
+    { icon: FaYoutube, label: 'YouTube', href: '#', color: '#ef4444' },
+    { icon: FaSteam, label: 'Steam', href: '#', color: '#6366f1' },
+    { icon: FaInstagram, label: 'Instagram', href: '#', color: '#ec4899' },
+    { icon: FaGithub, label: 'GitHub', href: '#', color: '#6b7280' },
+    { icon: FaDiscord, label: 'Discord', href: '#', color: '#7c3aed' },
+    { icon: FaTwitter, label: 'X', href: '#', color: '#1DA1F2' },
+  ];
 
   return (
     <div className={`min-h-screen w-full text-white relative overflow-hidden ${theme === 'dark' ? 'bg-gradient-to-br from-violet-900 to-indigo-900' : 'bg-gradient-to-br from-white to-gray-100'}`}>
@@ -77,7 +88,7 @@ export function VisibleLinkTree() {
           <Environment preset="sunset" />
         </Canvas>
       </div>
-      
+
       <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-screen">
         <motion.h1
           className="text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-center text-white"
@@ -102,7 +113,7 @@ export function VisibleLinkTree() {
               animate={{ rotate: theme === 'dark' ? 0 : 180 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
-              {theme === 'dark' ? <Moon className="w-6 h-6" /> : <Sun className="w-6 h-6" />}
+              {theme === 'dark' ? <FaMoon className="w-6 h-6" /> : <FaSun className="w-6 h-6" />}
             </motion.div>
           </Button>
 
@@ -136,7 +147,7 @@ export function VisibleLinkTree() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <link.icon className="w-6 md:w-8 h-6 md:h-8 group-hover:scale-110 transition-transform duration-300" style={{ color: link.color }} />
+                    <link.icon className="w-8 md:w-10 h-8 md:h-10 group-hover:scale-110 transition-transform duration-300" style={{ color: link.color }} />
                     <span className="font-semibold text-lg md:text-xl">{link.label}</span>
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
@@ -150,5 +161,5 @@ export function VisibleLinkTree() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
