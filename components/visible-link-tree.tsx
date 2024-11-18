@@ -66,12 +66,14 @@ export function VisibleLinkTree() {
 
   const links = [
     { icon: FaGlobe, label: 'Website', href: 'https://yashsarnaik.vercel.app/', color: '#3b82f6' },
-    { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/yashsarnaik23/', color: '#0077B5' },
-    { icon: SiGmail, label: 'Gmail', href: 'mailto:yashsarnaik2303@gmail.com', color: '#ef4444' },
-    { icon: FaSnapchatGhost, label: 'Snapchat', href: 'https://www.snapchat.com/add/sarnaik1023?share_id=7KuIaoFjEgs&locale=en-GB', color: '#FFFF00' },
     { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/yashsarnaik23/', color: '#ec4899' },
-    { icon: FaGithub, label: 'GitHub', href: 'https://github.com/yashsarnaik', color: '#6b7280' },
-    { icon: FaXTwitter, label: 'Twitter', href: 'https://x.com/Yash_Sarnaik23', color: '#1DA1F2' },
+    { icon: FaSnapchatGhost, label: 'Snapchat', href: 'https://www.snapchat.com/add/sarnaik1023?share_id=7KuIaoFjEgs&locale=en-GB', color: '#FFFF00' },
+
+    { icon: SiGmail, label: 'Gmail', href: 'mailto:yashsarnaik2303@gmail.com', color: '#ef4444' },
+    { icon: FaGithub, label: 'GitHub', href: 'https://github.com/yashsarnaik', color: '#00000' },
+    { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/yashsarnaik23/', color: '#0077B5' },
+
+    { icon: FaXTwitter, label: 'Twitter', href: 'https://x.com/Yash_Sarnaik23', color: '#00000' },
   ];
 
   return (
@@ -92,10 +94,10 @@ export function VisibleLinkTree() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-
+          Yash Sarnaik
         </motion.h1>
 
-        <Card className="w-full max-w-md bg-white/20 backdrop-blur-xl border-white/30 p-6 md:p-8 rounded-xl shadow-2xl relative">
+        <Card className="w-full max-w-md bg-white/20 backdrop-blur-xl border-white/30 p-6 md:p-8 rounded-xl shadow-2xl relative font-sans">
           <Button
             onClick={toggleTheme}
             className="absolute top-4 right-4 bg-white text-black hover:bg-gray-200 transition-all duration-300 p-3 rounded-full"
@@ -143,8 +145,8 @@ export function VisibleLinkTree() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <link.icon className="w-10 md:w-12 h-10 md:h-12 group-hover:scale-110 transition-transform duration-300" style={{ color: link.color }} />
-                    <span className="font-semibold text-lg md:text-xl">{link.label}</span>
+                    <link.icon className="w-14 md:w-16 h-14 md:h-16 group-hover:scale-110 transition-transform duration-300" style={{ color: link.color }} />
+                    <span className="font-semibold text-sm md:text-base">{link.label}</span>
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                       style={{ backgroundColor: link.color }}
