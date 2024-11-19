@@ -145,7 +145,7 @@ export function VisibleLinkTree() {
               <h3 className={`text-2xl md:text-3xl font-bold mb-2 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'} kalam-light-300`}>
                 यश उदय सरनाईक
               </h3>
-              <p className={`text-indigo-200 text-md md:text-lg ${theme === 'dark' ? 'text-indigo-200' : 'text-indigo-700'} oooh-baby-regular`}>
+              <p className={`text-md md:text-lg ${theme === 'dark' ? 'text-black' : 'text-black'} oooh-baby-regular`}>
                 Explore more about me Here
               </p>
             </div>
