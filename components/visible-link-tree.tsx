@@ -116,7 +116,7 @@ export function VisibleLinkTree() {
           <div className="flex flex-col items-center">
             <div className="w-32 md:w-40 h-32 md:h-40 rounded-full bg-gradient-to-br from-violet-300 to-indigo-400 mb-4 md:mb-6 flex items-center justify-center text-3xl md:text-5xl font-bold text-white shadow-lg relative">
               <img
-                src="https://via.placeholder.com/150" // Replace with your image URL
+                src="dp2.jpg" // Replace with your image URL
                 alt="Yash Sarnaik"
               
                 className="w-full h-full rounded-full object-cover"
