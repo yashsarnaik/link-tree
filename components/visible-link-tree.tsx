@@ -92,7 +92,7 @@ export function VisibleLinkTree() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Yash Sarnaik
+
         </motion.h1>
 
         <Card className="w-full max-w-md bg-white/20 backdrop-blur-xl border-white/30 p-6 md:p-8 rounded-xl shadow-2xl relative font-sans">
@@ -114,14 +114,20 @@ export function VisibleLinkTree() {
           </Button>
 
           <div className="flex flex-col items-center">
-            <div className="w-20 md:w-28 h-20 md:h-28 rounded-full bg-gradient-to-br from-violet-300 to-indigo-400 mb-4 md:mb-6 flex items-center justify-center text-3xl md:text-5xl font-bold text-white shadow-lg">
-              H
+            <div className="w-32 md:w-40 h-32 md:h-40 rounded-full bg-gradient-to-br from-violet-300 to-indigo-400 mb-4 md:mb-6 flex items-center justify-center text-3xl md:text-5xl font-bold text-white shadow-lg relative">
+              <img
+                src="https://via.placeholder.com/150" // Replace with your image URL
+                alt="Yash Sarnaik"
+              
+                className="w-full h-full rounded-full object-cover"
+              />
+              <div className="absolute inset-0 rounded-full border-4 border-white/50" style={{ filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))' }} />
             </div>
             <h2 className={`text-2xl md:text-3xl font-bold mb-2 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-              Developer
+              Yash Sarnaik
             </h2>
             <p className={`text-indigo-200 text-md md:text-lg ${theme === 'dark' ? 'text-indigo-200' : 'text-indigo-700'}`}>
-              Full-stack Web Developer
+              Software Developer
             </p>
           </div>
 
