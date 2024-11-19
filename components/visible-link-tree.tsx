@@ -68,16 +68,14 @@ export function VisibleLinkTree() {
     { icon: FaGlobe, label: 'Website', href: 'https://yashsarnaik.vercel.app/', color: '#3b82f6' },
     { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/yashsarnaik23/', color: '#ec4899' },
     { icon: FaSnapchatGhost, label: 'Snapchat', href: 'https://www.snapchat.com/add/sarnaik1023?share_id=7KuIaoFjEgs&locale=en-GB', color: '#FFFF00' },
-
     { icon: SiGmail, label: 'Gmail', href: 'mailto:yashsarnaik2303@gmail.com', color: '#ef4444' },
     { icon: FaGithub, label: 'GitHub', href: 'https://github.com/yashsarnaik', color: '#00000' },
     { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/yashsarnaik23/', color: '#0077B5' },
-
     { icon: FaXTwitter, label: 'Twitter', href: 'https://x.com/Yash_Sarnaik23', color: '#00000' },
   ];
 
   return (
-    <div className={`min-h-screen w-full text-white relative overflow-hidden ${theme === 'dark' ? 'bg-gradient-to-br from-violet-900 to-indigo-900' : 'bg-gradient-to-br from-white to-gray-100'}`}>
+    <div className={`min-h-screen w-full ${theme === 'dark' ? 'text-white' : 'text-black'} relative overflow-hidden ${theme === 'dark' ? 'bg-gradient-to-br from-violet-900 to-indigo-900' : 'bg-gradient-to-br from-white to-gray-100'}`}>
       <div className="absolute inset-0 z-0">
         <Canvas>
           <ambientLight intensity={0.5} />
@@ -89,7 +87,7 @@ export function VisibleLinkTree() {
 
       <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-screen">
         <motion.h1
-          className="text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-center text-white"
+          className={`text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-center ${theme === 'dark' ? 'text-white' : 'text-black'}`}
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -116,11 +114,15 @@ export function VisibleLinkTree() {
           </Button>
 
           <div className="flex flex-col items-center">
-            <div className="w-20 md:w-28 h-20 md:h-28 rounded-full bg-gradient-to-br from-violet-400 to-indigo-500 mb-4 md:mb-6 flex items-center justify-center text-3xl md:text-5xl font-bold text-white shadow-lg">
+            <div className="w-20 md:w-28 h-20 md:h-28 rounded-full bg-gradient-to-br from-violet-300 to-indigo-400 mb-4 md:mb-6 flex items-center justify-center text-3xl md:text-5xl font-bold text-white shadow-lg">
               H
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4 text-white">Developer</h2>
-            <p className="text-indigo-200 text-md md:text-lg">Full-stack Web Developer</p>
+            <h2 className={`text-2xl md:text-3xl font-bold mb-2 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+              Developer
+            </h2>
+            <p className={`text-indigo-200 text-md md:text-lg ${theme === 'dark' ? 'text-indigo-200' : 'text-indigo-700'}`}>
+              Full-stack Web Developer
+            </p>
           </div>
 
           <div className="grid gap-4 md:gap-6 mt-6 md:mt-8">
