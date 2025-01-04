@@ -134,14 +134,20 @@ export function VisibleLinkTree() {
             </Button>
 
             <div className="flex flex-col items-center">
-              <div className="w-32 md:w-40 h-32 md:h-40 rounded-full bg-gradient-to-br from-violet-300 to-indigo-400 mb-4 md:mb-6 flex items-center justify-center text-3xl md:text-5xl font-bold text-white shadow-lg relative">
-                <img
-                  src="dp2.jpg" // Replace with your image URL
-                  alt="Yash Sarnaik"
-                  className="w-full h-full rounded-full object-cover"
-                />
-                <div className="absolute inset-0 rounded-full border-4 border-white/50" style={{ filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))' }} />
+              <div className="relative w-28 md:w-36 h-28 md:h-36">
+                {/* Gradient background with blur effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-400/80 to-indigo-500/80 rounded-full blur-sm"></div>
+                
+                {/* Image container with shadow */}
+                <div className="relative w-full h-full overflow-hidden rounded-full shadow-xl">
+                  <img
+                    src="dp2.jpg"
+                    alt="Yash Sarnaik"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
+
               <h3 className={`text-2xl md:text-3xl font-bold mb-2 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'} kalam-light-300`}>
                 यश उदय सरनाईक
               </h3>
