@@ -65,7 +65,7 @@ export function VisibleLinkTree() {
   };
 
   const links = [
-    { icon: FaGlobe, label: 'Website', href: 'https://yashsarnaik.vercel.app/', color: '#3b82f6' },
+    { icon: FaGlobe, label: 'Website', href: 'https://me.yashsarnaik.in', color: '#3b82f6' },
     { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/yashsarnaik23/', color: '#ec4899' },
     { icon: FaSnapchatGhost, label: 'Snapchat', href: 'https://www.snapchat.com/add/sarnaik1023?share_id=7KuIaoFjEgs&locale=en-GB', color: '#FFFF00' },
     { icon: SiGmail, label: 'Gmail', href: 'mailto:yashsarnaik2303@gmail.com', color: '#ef4444' },
