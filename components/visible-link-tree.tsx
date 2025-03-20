@@ -32,7 +32,7 @@ function Background() {
     <mesh ref={meshRef} scale={[30, 30, 30]} position={[0, 0, -5]}>
       <torusKnotGeometry args={[1, 0.3, 128, 16]} />
       <meshStandardMaterial
-        color="#6d28d9"
+        color="#7c3edd"
         roughness={0.3}
         metalness={0.8}
         emissive="#4c1d95"
